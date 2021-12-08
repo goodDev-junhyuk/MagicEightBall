@@ -9,13 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let answers = [
-        "Yes, definitely", "It is certain", "Without a doubt", "Yes", "Most likely", "Sure, why not?", "Same",
-        "Tell me more", "Out to lunch", "Reply hazy, try again", "Ask again later",
-        "The cake is a lie", "42", "TMI", "Very doubtful", "Don't count on it", "My reply is no",
-        "Absolutely not" ]
+    let answers = ["Make School", "Uber", "Netflix", "Facebook", "Google", "Kickstarter", "Spotify", "Airbnb", "Snapchat", "YouTube", "Dropbox", "Amazon", "Craigslist", "Tinder", "Instagram", "Tesla", "Twitter", "SpaceX"]
+    
+    let secondAnswers = ["Dogs", "Books", "Gamers", "Star Wars", "Bitcoin", "Goats", "Zombies", "Rich People", "Swimmers", "Florida", "Vampires", "Dragons", "Internet of Things", "Mars", "Cryptocurrency", "Mosquito Repellent", "Fidget Spinners", "Sun Screen", "Water Bottles", "Lost Travelers", "Superheroes"
+    ]
     
     @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var secondLabel: UILabel!
+    
     @IBOutlet weak var shakeButton: UIButton!
     
 
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
         // answerLabel.text = answers[randomIndex]
         
         generateAnswer()
+        secondGenerateAnswer()
         
     }
     
@@ -44,12 +46,22 @@ class ViewController: UIViewController {
         // answerLabel.text = answers[randomIndex]
         
         generateAnswer()
+        secondGenerateAnswer()
     }
 
     func generateAnswer() {
         
         let randomIndex = Int.random(in: 0..<answers.count)
         answerLabel.text = answers[randomIndex]
+    }
+    
+    func secondGenerateAnswer() {
+        
+        
+        let randomIndex = Int.random(in: 0..<secondAnswers.count)
+        secondLabel.text = secondAnswers[randomIndex]
+        
+        
     }
     
     
